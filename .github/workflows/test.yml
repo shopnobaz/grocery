@@ -1,7 +1,7 @@
 name: Deploy dev
 on: 
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
   deploy:
     name: "Deploy dev to dev"
@@ -30,4 +30,4 @@ jobs:
         run: ssh dev 'cd grocery/ && git fetch && git pull origin main && npm install'
 
       - name: Restart app 
-        run: ssh dev 'pm2 restart dev'        
+        run: ssh dev 'pm2 restart project'        
